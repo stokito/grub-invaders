@@ -1,0 +1,19 @@
+hi. this is invaders, a multi boot compliant game for i386.
+boot it with grub (http://www.gnu.org/software/grub/)
+like this:
+
+root (YOUR ROOT DEVICE)
+kernel (YOUR PATH)/invaders
+boot
+
+run the compile.sh script to compile the game, or just use the
+precompiled image. (do not try to boot "invaders.exec", that's the
+wrong file. use "invaders" instead)
+
+the license of the whole project is the GNU General Public License,
+see the LICENSE file for details.
+
+have fun,
+Erik
+
+erikyyy@erikyyy.de
