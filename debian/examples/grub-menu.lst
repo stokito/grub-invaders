@@ -1,0 +1,8 @@
+# sample /boot/grub/menu.lst entry for grub-invaders
+#
+# This example assumes the contents of /boot is on the root partition.
+# If your /boot is on its own partition, remove /boot from the 'kernel' line.
+
+title	GRUB Invaders
+root	(hd0,0)
+kernel	/boot/invaders

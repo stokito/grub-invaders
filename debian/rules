@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpatch/dpatch.make
+
+build: build-stamp
+build-stamp: patch-stamp
+	dh_testdir
+
+	sh ./compile.sh
+
+	touch build-stamp
+
+clean: unpatch
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	sh ./clean.sh
+	rm -f invaders
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	install -D -m644 invaders debian/grub-invaders/boot/invaders
+
+binary-indep: build install
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs README
+	dh_installchangelogs
+	dh_installexamples debian/examples/*
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

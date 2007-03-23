@@ -1,0 +1,5 @@
+invaders (1.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #415955).
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Fri, 23 Mar 2007 09:46:00 +0100

@@ -1,0 +1,23 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+## 01-pointer-targets-differ-in-signedness.dpatch by Fabian Greffrath <fabian@debian-unofficial.org>
+##
+## DP: Fixes: "pointer targets in passing argument 3 of ‘video_putstring’ differ in signedness"
+
+@DPATCH@
+
+diff -Naru invaders.orig/game.c invaders/game.c
+--- invaders.orig/game.c	2001-05-13 16:40:18.000000000 +0200
++++ invaders/game.c	2007-03-23 10:25:05.000000000 +0100
+@@ -197,9 +197,9 @@
+   bool pressed;
+ 
+   video_usecolor(6,1);
+-  video_putstring(30,10,"  GAME OVER  ");
+-  video_putstring(30,11,winner ? "  YOU WIN  " : "  YOU LOOSE  ");
+-  video_putstring(30,12,"  PRESS ESC  ");
++  video_putstring(30,10,(uint8 *) "  GAME OVER  ");
++  video_putstring(30,11,(uint8 *) (winner ? "   YOU WIN   " : "  YOU LOOSE  "));
++  video_putstring(30,12,(uint8 *) "  PRESS ESC  ");
+   video_update();
+   do{
+     key_decode(&key,&pressed);

@@ -1,0 +1,75 @@
+This package was debianized by Fabian Greffrath <fabian@debian-unofficial.org> on
+Fri, 23 Mar 2007 09:46:00 +0100.
+
+It was downloaded from <http://www.erikyyy.de/invaders/>.
+
+Upstream Author: Erik Thiele <erikyyy@erikyyy.de>
+
+License (all files, except boot.S, multiboot.h and io.h):
+
+	Copyright (C) 2001 Erik Thiele <erikyyy@erikyyy.de>
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along
+	with this program; if not, write to the Free Software Foundation, Inc.,
+	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+License (boot.S, multiboot.h):
+
+	Copyright (C) 1999 Free Software Foundation, Inc.
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along
+	with this program; if not, write to the Free Software Foundation, Inc.,
+	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+License (io.h):
+
+	Copyright (C) Linus Torvalds and others.
+
+	This file is part of the Linux kernel (compare with `include/asm/io.h'
+	in the Linux source code).
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along
+	with this program; if not, write to the Free Software Foundation, Inc.,
+	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is (C) 2007, Fabian Greffrath <fabian@debian-unofficial.org> and
+is licensed under the GPL, see above.

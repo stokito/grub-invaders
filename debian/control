@@ -1,0 +1,15 @@
+Source: invaders
+Section: misc
+Priority: optional
+Maintainer: Fabian Greffrath <fabian@debian-unofficial.org>
+Build-Depends: debhelper (>= 5), dpatch
+Standards-Version: 3.7.2
+
+Package: grub-invaders
+Architecture: i386
+Recommends: grub
+Description: multiboot compliant kernel game
+ GRUB Invaders is a game that runs directly on a computer, without an operating
+ system. It is meant to be started with the GRUB bootloader for PCs.
+ .
+  Homepage: <http://www.erikyyy.de/invaders/>
