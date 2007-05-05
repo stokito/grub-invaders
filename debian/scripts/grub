@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+if test -e /boot/invaders ; then
+  echo "Found GRUB Invaders: /boot/invaders" >&2
+  cat << EOF
+menuentry "GRUB Invaders" {
+	multiboot	/boot/invaders
+}
+EOF
+fi

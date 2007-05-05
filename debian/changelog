@@ -1,3 +1,15 @@
+invaders (1.0.0-2) unstable; urgency=low
+
+  * Install ELF image, not a.out (Closes: #422366).
+    Thanks, Robert Millan <rmh@aybabtu.com>!
+  * Add support for building on amd64 (Closes: #422364).
+    Thanks again, Robert Millan <rmh@aybabtu.com>!
+  * Provide /etc/grub.d/20_invaders and run update-grub in postinst/-rm
+    (Closes: #417030). Thanks again, Robert Millan <rmh@aybabtu.com>!
+  * Recommends: grub2 (>= 1.95+20070505-1) | grub.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sat,  5 May 2007 15:22:00 +0100
+
 invaders (1.0.0-1) unstable; urgency=low
 
   * Initial release (Closes: #415955).
