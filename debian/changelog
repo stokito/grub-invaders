@@ -1,3 +1,9 @@
+invaders (1.0.0-3) unstable; urgency=low
+
+  * Fix bogus postrm.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sun, 13 May 2007 15:08:00 +0100
+
 invaders (1.0.0-2) unstable; urgency=low
 
   * Install ELF image, not a.out (Closes: #422366).
