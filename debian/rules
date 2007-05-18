@@ -2,6 +2,10 @@
 
 include /usr/share/dpatch/dpatch.make
 
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTFLAGS += -s
+endif
+
 build: build-stamp
 build-stamp: patch-stamp
 	dh_testdir
@@ -26,7 +30,7 @@ install: build
 	dh_clean -k
 	dh_installdirs
 
-	install -D -m644 invaders.exec debian/grub-invaders/boot/invaders
+	install -D -m644 $(INSTFLAGS) invaders.exec debian/grub-invaders/boot/invaders
 	install -D -m755 debian/scripts/grub debian/grub-invaders/etc/grub.d/20_invaders
 
 binary-indep: build install
@@ -37,6 +41,7 @@ binary-arch: build install
 	dh_installdocs README
 	dh_installchangelogs
 	dh_installexamples debian/examples/*
+	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_installdeb
