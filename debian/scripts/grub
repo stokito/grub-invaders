@@ -1,16 +1,10 @@
 #!/bin/bash -e
-name="GRUB Invaders"
-binary=/boot/invaders
 
-if test -e $binary ; then
-  echo "Found $name: $binary" >&2
-  basename=`basename $binary`
-  dirname=`dirname $binary`
-  grub_dirname=`echo ${dirname} | sed -e "s%^/boot%${GRUB_DRIVE_BOOT}%g"`
-
+if test -e /boot/invaders ; then
+  echo "Found GRUB Invaders image: /boot/invaders" >&2
   cat << EOF
-menuentry "$name" {
-	multiboot	${grub_dirname}/${basename}
+menuentry "GRUB Invaders" {
+	multiboot	${GRUB_DRIVE_BOOT}/invaders
 }
 EOF
 fi

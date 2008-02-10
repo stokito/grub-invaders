@@ -71,5 +71,5 @@ License (io.h):
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-The Debian packaging is (C) 2007, Fabian Greffrath <fabian@debian-unofficial.org> and
+The Debian packaging is (C) 2007-2008, Fabian Greffrath <fabian@debian-unofficial.org> and
 is licensed under the GPL, see above.

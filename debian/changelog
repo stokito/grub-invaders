@@ -1,3 +1,35 @@
+invaders (1.0.0-7) unstable; urgency=low
+
+  * debian/postinst:
+    + Remove forgotten config file `/etc/grub.d/20_invaders'
+      before running update-grub2.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sun, 10 Feb 2008 15:30:00 +0100
+
+invaders (1.0.0-6) unstable; urgency=low
+
+  * debian/control:
+    + Changed Suggests to 'grub2 (>= 1.95+20080116-1)'.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sun, 27 Jan 2008 20:15:00 +0100
+
+invaders (1.0.0-5) unstable; urgency=low
+
+  * debian/control:
+    + Bumped Standards-Version to 3.7.3.
+    + Added Homepage: field.
+    + Added 'Depends: ${misc:Depends}'.
+    + Added 'Suggests: grub2 (>= 1.95+20081116-1)'.
+    + Removed Recommends.
+  * debian/postinst, debian/postrm:
+    + Use update-grub2 instead of update-grub (Closes: #460078).
+  * debian/rules:
+    + Install debian/scripts/grub to '/etc/grub.d/22_invaders'.
+  * debian/scripts/grub:
+    + Synced with memtest86 (3.4-1) packaging.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Wed, 23 Jan 2008 10:00:00 +0100
+
 invaders (1.0.0-4) unstable; urgency=low
 
   * Support /boot on separate partition (Closes: #424928).
