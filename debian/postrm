@@ -2,7 +2,7 @@
 
 set -e
 
-if [ -x "`which update-grub 2>/dev/null`" ]; then update-grub ; fi
+if [ -x "`which update-grub2 2>/dev/null`" ]; then update-grub2 ; fi
 
 #DEBHELPER#
 

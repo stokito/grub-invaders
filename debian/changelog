@@ -1,3 +1,54 @@
+invaders (1.0.0-8) unstable; urgency=low
+
+  * debian/control:
+    + Set Maintainer to Debian Games Team and added myself to Uploaders.
+    + Added Vcs-Svn and Vcs-Browser fields.
+    + Bumped Suggests to 'grub2 (>= 1.96+20080531-1)'.
+  * debian/patches/01-pointer-targets-differ-in-signedness.dpatch:
+    + Fixed misspelling: "YOU LOOSE" should be "YOU LOSE" (Closes: #478928).
+      Thanks Daniel Kahn Gillmor <dkg-debian.org@fifthhorseman.net>.
+  * debian/scripts/grub:
+    + Fixed to use functions out of /usr/lib/grub/update-grub_lib instead of
+      ${GRUB_DRIVE_BOOT} (Closes: #492267). Thanks
+      Justin B Rye <jbr@edlug.org.uk>.
+    + Added a missing "prepare_grub_to_access_device ${GRUB_DEVICE_BOOT}"
+      call. Without it, it could break if /boot/ is in a different device than
+      whatever came before invaders. Thanks Robert Millan <rmh@aybabtu.com>.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Fri,  1 Aug 2008 14:44:00 +0100
+
+invaders (1.0.0-7) unstable; urgency=low
+
+  * debian/postinst:
+    + Remove forgotten config file `/etc/grub.d/20_invaders'
+      before running update-grub2.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sun, 10 Feb 2008 15:30:00 +0100
+
+invaders (1.0.0-6) unstable; urgency=low
+
+  * debian/control:
+    + Changed Suggests to 'grub2 (>= 1.95+20080116-1)'.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Sun, 27 Jan 2008 20:15:00 +0100
+
+invaders (1.0.0-5) unstable; urgency=low
+
+  * debian/control:
+    + Bumped Standards-Version to 3.7.3.
+    + Added Homepage: field.
+    + Added 'Depends: ${misc:Depends}'.
+    + Added 'Suggests: grub2 (>= 1.95+20081116-1)'.
+    + Removed Recommends.
+  * debian/postinst, debian/postrm:
+    + Use update-grub2 instead of update-grub (Closes: #460078).
+  * debian/rules:
+    + Install debian/scripts/grub to '/etc/grub.d/22_invaders'.
+  * debian/scripts/grub:
+    + Synced with memtest86 (3.4-1) packaging.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Wed, 23 Jan 2008 10:00:00 +0100
+
 invaders (1.0.0-4) unstable; urgency=low
 
   * Support /boot on separate partition (Closes: #424928).

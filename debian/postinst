@@ -2,8 +2,10 @@
 
 set -e
 
-if [ "$1" = "configure" ] && [ -x "`which update-grub 2>/dev/null`" ]; then
-        update-grub
+rm -f /etc/grub.d/20_invaders
+
+if [ "$1" = "configure" ] && [ -x "`which update-grub2 2>/dev/null`" ]; then
+        update-grub2
 fi
 
 #DEBHELPER#
