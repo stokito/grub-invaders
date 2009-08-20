@@ -1,3 +1,46 @@
+invaders (1.0.0-9) unstable; urgency=low
+
+  [ Fabian Greffrath ]
+  * debian/clean, debian/grub-invaders.{docs,examples,install}:
+    + Added.
+  * debian/compat:
+    + Raised debhelper compatibility to 7.
+  * debian/control:
+    + Changed Section from misc to kernel.
+    + Raised Build-Depends to debhelper (>= 7.2) and quilt (>= 0.46-7).
+    + Bumped Standards-Version to 3.8.3.
+    + Removed spurious Suggests on grub2.
+  * debian/copyright:
+    + Converted into a machine-readable format.
+    + Adjusted license for io.h to GPL-2 (not GPL-2+).
+    + Relicensed the Debian packaging under the GNU All-Permissive License.
+  * debian/examples/grub-menu.lst, debian/scripts/22_invaders:
+    + Use the original filename "invaders.exec" instead of "invaders".
+  * debian/grub-invaders.post{inst,rm}:
+    + Renamed from post{inst,rm}.
+  * debian/patches/:
+    + Switched from dpatch to quilt for patch management.
+    + Applied fixes from Carl-Daniel Hailfinger
+      <c-d.hailfinger.devel.2006 at gmx.net> found at
+      <http://www.coreboot.org/pipermail/coreboot/2009-April/046558.html>:
+  * debian/patches/01-pointer-targets-differ-in-signedness.dpatch:
+    + Use (char *) instead of (uint8 *).
+  * debian/patches/02-amd64.dpatch:
+    + Fix incompatibility with newer gcc and binutils.
+  * debian/rules:
+    + Converted to debhelper 7.2.
+    + Improved stripping.
+  * debian/scripts/22_invaders:
+    + Renamed from debian/scripts/grub.
+    + Use grub-mkconfig_lib instead of the deprecated update-grub_lib
+      (Closes: #539947). Thanks Didier 'OdyX' Raboud.
+
+  [ Evgeni Golov ]
+  * debian/README.source:
+    + Added a short note on where to get info about quilt.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Thu, 20 Aug 2009 20:31:38 +0200
+
 invaders (1.0.0-8) unstable; urgency=low
 
   * debian/control:

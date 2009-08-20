@@ -5,4 +5,4 @@
 
 title	GRUB Invaders
 root	(hd0,0)
-kernel	/boot/invaders
+kernel	/boot/invaders.exec

@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+if test -e /boot/invaders.exec ; then
+  source /usr/lib/grub/grub-mkconfig_lib
+  INVADERSPATH=$( make_system_path_relative_to_its_root "/boot/invaders.exec" )
+  echo "Found GRUB Invaders image: /boot/invaders.exec" >&2
+  cat << EOF
+menuentry "GRUB Invaders" {
+EOF
+  prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/\t/g"
+  cat << EOF
+	multiboot	${INVADERSPATH}
+}
+EOF
+fi

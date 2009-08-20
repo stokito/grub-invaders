@@ -1,53 +1,22 @@
 #!/usr/bin/make -f
 
-include /usr/share/dpatch/dpatch.make
+%:
+	dh --with quilt $@
 
-ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
-	INSTFLAGS += -s
-endif
-
-build: build-stamp
-build-stamp: patch-stamp
-	dh_testdir
-
+override_dh_auto_build:
 	sh ./compile.sh
 
-	touch build-stamp
-
-clean: unpatch
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-
+override_dh_auto_clean:
 	sh ./clean.sh
-	rm -f invaders
 
-	dh_clean
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
-
-	install -D -m644 $(INSTFLAGS) invaders.exec debian/grub-invaders/boot/invaders
-	install -D -m755 debian/scripts/grub debian/grub-invaders/etc/grub.d/22_invaders
-
-binary-indep: build install
-
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installdocs README
-	dh_installchangelogs
-	dh_installexamples debian/examples/*
-	dh_strip
-	dh_compress
+override_dh_fixperms:
 	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	chmod 0644 debian/grub-invaders/boot/invaders.exec
+	chmod 0755 debian/grub-invaders/etc/grub.d/22_invaders
 
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+override_dh_strip:
+	dh_strip
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	strip --remove-section=.comment --remove-section=.note \
+	debian/grub-invaders/boot/invaders.exec
+endif

@@ -1,0 +1,2 @@
+invaders.exec boot
+debian/scripts/22_invaders etc/grub.d
