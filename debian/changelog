@@ -1,3 +1,10 @@
+invaders (1.0.0-8ubuntu1) karmic; urgency=low
+
+  * Update debian/patches/02-amd64.dpatch: fumble a -fno-stack-protector
+    in there to fix FTBFS.
+
+ -- Stefan Potyra <sistpoty@ubuntu.com>  Tue, 29 Sep 2009 23:01:57 +0200
+
 invaders (1.0.0-8) unstable; urgency=low
 
   * debian/control:
