@@ -1,3 +1,9 @@
+invaders (1.0.0-8ubuntu2) karmic; urgency=low
+
+  * Rename and adjust 02-nostdlib-build-fix to use -nostdlib correctly.
+
+ -- Kees Cook <kees@ubuntu.com>  Fri, 02 Oct 2009 14:21:02 -0700
+
 invaders (1.0.0-8ubuntu1) karmic; urgency=low
 
   * Update debian/patches/02-amd64.dpatch: fumble a -fno-stack-protector
