@@ -1,15 +1,63 @@
-invaders (1.0.0-8ubuntu2) karmic; urgency=low
+invaders (1.0.0-10) unstable; urgency=low
 
-  * Rename and adjust 02-nostdlib-build-fix to use -nostdlib correctly.
+  [ Stefan Potyra ]
+  * Fix build failures if stack-protector is enabled by default,
+    thanks to Kees Cook for the patches:
+    + rename debian/patches/02-amd64.patch to 02-gcc-ldflags.patch
+    + move -nostdlib to CFLAGS, as it's a compiler flag
+    + use CFLAGS for linking as well (since gcc is used)
 
- -- Kees Cook <kees@ubuntu.com>  Fri, 02 Oct 2009 14:21:02 -0700
+  [ Fabian Greffrath ]
+  * debian/patches/02-gcc-ldflags.patch: Replace -fno-builtin with
+    -ffreestanding, the latter implies the former and is even stricter.
+  * debian/patches/03-reboot-on-esc.patch: New patch, perform a reboot
+    when the ESC key is pressed. Relies on the keyboard controller available
+    at port 0x64 (just as the whole game does anyway).
 
-invaders (1.0.0-8ubuntu1) karmic; urgency=low
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Fri, 13 Nov 2009 13:44:59 +0100
 
-  * Update debian/patches/02-amd64.dpatch: fumble a -fno-stack-protector
-    in there to fix FTBFS.
+invaders (1.0.0-9) unstable; urgency=low
 
- -- Stefan Potyra <sistpoty@ubuntu.com>  Tue, 29 Sep 2009 23:01:57 +0200
+  [ Fabian Greffrath ]
+  * debian/clean, debian/grub-invaders.{docs,examples,install}:
+    + Added.
+  * debian/compat:
+    + Raised debhelper compatibility to 7.
+  * debian/control:
+    + Changed Section from misc to kernel.
+    + Raised Build-Depends to debhelper (>= 7.2) and quilt (>= 0.46-7).
+    + Bumped Standards-Version to 3.8.3.
+    + Removed spurious Suggests on grub2.
+  * debian/copyright:
+    + Converted into a machine-readable format.
+    + Adjusted license for io.h to GPL-2 (not GPL-2+).
+    + Relicensed the Debian packaging under the GNU All-Permissive License.
+  * debian/examples/grub-menu.lst, debian/scripts/22_invaders:
+    + Use the original filename "invaders.exec" instead of "invaders".
+  * debian/grub-invaders.post{inst,rm}:
+    + Renamed from post{inst,rm}.
+  * debian/patches/:
+    + Switched from dpatch to quilt for patch management.
+    + Applied fixes from Carl-Daniel Hailfinger
+      <c-d.hailfinger.devel.2006 at gmx.net> found at
+      <http://www.coreboot.org/pipermail/coreboot/2009-April/046558.html>:
+  * debian/patches/01-pointer-targets-differ-in-signedness.dpatch:
+    + Use (char *) instead of (uint8 *).
+  * debian/patches/02-amd64.dpatch:
+    + Fix incompatibility with newer gcc and binutils.
+  * debian/rules:
+    + Converted to debhelper 7.2.
+    + Improved stripping.
+  * debian/scripts/22_invaders:
+    + Renamed from debian/scripts/grub.
+    + Use grub-mkconfig_lib instead of the deprecated update-grub_lib
+      (Closes: #539947). Thanks Didier 'OdyX' Raboud.
+
+  [ Evgeni Golov ]
+  * debian/README.source:
+    + Added a short note on where to get info about quilt.
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Thu, 20 Aug 2009 20:31:38 +0200
 
 invaders (1.0.0-8) unstable; urgency=low
 

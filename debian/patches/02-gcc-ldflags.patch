@@ -1,20 +1,17 @@
-#!/bin/sh /usr/share/dpatch/dpatch-run
-## 02-amd64.dpatch by Robert Millan <rmh@aybabtu.com>
-##
-## DP: support for building on amd64 and others
+Support for building on amd64 and fix an incompatibility with newer gcc and binutils.
 
-@DPATCH@
-diff -urNad invaders-1.0.0~/compile.sh invaders-1.0.0/compile.sh
---- invaders-1.0.0~/compile.sh	2001-05-21 13:26:46.000000000 -0700
-+++ invaders-1.0.0/compile.sh	2009-10-02 14:20:30.000000000 -0700
+Index: invaders-1.0.0/compile.sh
+===================================================================
+--- invaders-1.0.0.orig/compile.sh	2001-05-21 22:26:46.000000000 +0200
++++ invaders-1.0.0/compile.sh	2009-10-30 21:52:57.000000000 +0100
 @@ -3,8 +3,8 @@
  set -e
  set -v
  
 -CFLAGS="-fno-builtin -nostdinc -O2 -I. -Wall -Werror"
 -LDFLAGS="-nostdlib -Wl,-N -Wl,-Ttext -Wl,100000"
-+CFLAGS="-fno-builtin -nostdinc -O2 -I. -Wall -Werror -m32 -nostdlib"
-+LDFLAGS="-Wl,-N -Wl,-Ttext -Wl,100000 -m32"
++CFLAGS="-ffreestanding -nostdinc -O2 -I. -Wall -Werror -m32 -nostdlib"
++LDFLAGS="-Wl,-N -Wl,-Ttext -Wl,100000 -Wl,--build-id=none -m32"
  gcc $CFLAGS -c keyboard.c
  gcc $CFLAGS -c delay.c
  gcc $CFLAGS -c common.c
