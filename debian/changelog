@@ -1,3 +1,21 @@
+invaders (1.0.0-10) unstable; urgency=low
+
+  [ Stefan Potyra ]
+  * Fix build failures if stack-protector is enabled by default,
+    thanks to Kees Cook for the patches:
+    + rename debian/patches/02-amd64.patch to 02-gcc-ldflags.patch
+    + move -nostdlib to CFLAGS, as it's a compiler flag
+    + use CFLAGS for linking as well (since gcc is used)
+
+  [ Fabian Greffrath ]
+  * debian/patches/02-gcc-ldflags.patch: Replace -fno-builtin with
+    -ffreestanding, the latter implies the former and is even stricter.
+  * debian/patches/03-reboot-on-esc.patch: New patch, perform a reboot
+    when the ESC key is pressed. Relies on the keyboard controller available
+    at port 0x64 (just as the whole game does anyway).
+
+ -- Fabian Greffrath <fabian@debian-unofficial.org>  Fri, 13 Nov 2009 13:44:59 +0100
+
 invaders (1.0.0-9) unstable; urgency=low
 
   [ Fabian Greffrath ]
