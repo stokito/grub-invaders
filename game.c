@@ -2,6 +2,7 @@
 #include "keyboard.h"
 #include "sound.h"
 #include "delay.h"
+#include "io.h"
 
 struct shot_t {
   int8 x,y; // x==-1 -> inactive shot
@@ -18,6 +19,13 @@ struct alien_t {
 static struct alien_t aliens[NUMALIENS];
 
 static bool gameover, winner;
+
+inline void reboot()
+{
+  /* tell the BIOS to do a warm start */
+  *((unsigned short *)0x472) = 0x1234;
+  outb(0xfe,0x64);
+};
 
 void resetgame()
 {
@@ -120,6 +128,11 @@ void keywork()
       break;
     case 'x':
       return;
+    case '@':
+      if (pressed) {
+        reboot();
+      }
+      break;
     };
   };
 };
@@ -198,7 +211,7 @@ void displaygameover()
 
   video_usecolor(6,1);
   video_putstring(30,10,"  GAME OVER  ");
-  video_putstring(30,11,winner ? "  YOU WIN  " : "  YOU LOOSE  ");
+  video_putstring(30,11,winner ? "   YOU WIN   " : "  YOU LOSE   ");
   video_putstring(30,12,"  PRESS ESC  ");
   video_update();
   do{

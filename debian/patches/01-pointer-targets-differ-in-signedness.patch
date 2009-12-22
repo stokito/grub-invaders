@@ -1,7 +1,7 @@
 Use (char *) instead of (uint8 *) and fix a spelling error.
 
---- invaders.orig/video.c
-+++ invaders/video.c
+--- invaders-1.0.0.orig/video.c
++++ invaders-1.0.0/video.c
 @@ -36,7 +36,7 @@
    video_putchar(x+1,y,hextab[hex&15]);
  };
@@ -11,8 +11,8 @@ Use (char *) instead of (uint8 *) and fix a spelling error.
  {
    while (*str) video_putchar(x++,y,*(str++));
  };
---- invaders.orig/video.h
-+++ invaders/video.h
+--- invaders-1.0.0.orig/video.h
++++ invaders-1.0.0/video.h
 @@ -8,7 +8,7 @@
  void video_putchar(int32 x, int32 y, uint8 code);
  void video_fill(int32 x, int32 y, int32 width, int32 height, uint8 code);
@@ -22,8 +22,8 @@ Use (char *) instead of (uint8 *) and fix a spelling error.
  
  // immediate effect
  void video_update();
---- invaders.orig/game.c
-+++ invaders/game.c
+--- invaders-1.0.0.orig/game.c
++++ invaders-1.0.0/game.c
 @@ -198,7 +198,7 @@
  
    video_usecolor(6,1);

@@ -2,8 +2,10 @@ Source: invaders
 Section: kernel
 Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
-Uploaders: Fabian Greffrath <fabian@debian-unofficial.org>
-Build-Depends: debhelper (>= 7.2), quilt (>= 0.46-7)
+Uploaders: Fabian Greffrath <fabian+debian@greffrath.com>,
+           Stefan Potyra <sistpoty@ubuntu.com>
+DM-Upload-Allowed: yes
+Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.8.3
 Homepage: http://www.erikyyy.de/invaders/
 Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/invaders/

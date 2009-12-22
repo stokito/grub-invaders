@@ -1,9 +1,7 @@
 Support for building on amd64 and fix an incompatibility with newer gcc and binutils.
 
-Index: invaders-1.0.0/compile.sh
-===================================================================
---- invaders-1.0.0.orig/compile.sh	2001-05-21 22:26:46.000000000 +0200
-+++ invaders-1.0.0/compile.sh	2009-10-30 21:52:57.000000000 +0100
+--- invaders-1.0.0.orig/compile.sh
++++ invaders-1.0.0/compile.sh
 @@ -3,8 +3,8 @@
  set -e
  set -v
