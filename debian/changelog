@@ -1,3 +1,22 @@
+invaders (1.0.0-11) unstable; urgency=low
+
+  [ Fabian Greffrath ]
+  * Refreshed all patches.
+  * debian/patches/03-reboot-on-esc.patch: Only reboot when the ESC key
+    is pressed in-game, not during the GAME OVER screen.
+  * Relaxed debhelper build-dependency a bit.
+  * Updated my email address.
+  * Removed spurious removal of an obsoleted config file.
+  * Converted packaging to source format "3.0 (quilt)".
+
+  [ Stefan Potyra ]
+  * Add myself to uploaders.
+
+  [ Fabian Greffrath ]
+  * Set DM-Upload-Allowed: yes.
+
+ -- Fabian Greffrath <fabian+debian@greffrath.com>  Tue, 22 Dec 2009 08:52:16 +0100
+
 invaders (1.0.0-10) unstable; urgency=low
 
   [ Stefan Potyra ]

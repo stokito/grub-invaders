@@ -36,7 +36,7 @@ void video_puthex8(int32 x, int32 y, uint8 hex)
   video_putchar(x+1,y,hextab[hex&15]);
 };
 
-void video_putstring(int32 x, int32 y, uint8 *str)
+void video_putstring(int32 x, int32 y, char *str)
 {
   while (*str) video_putchar(x++,y,*(str++));
 };

@@ -24,12 +24,14 @@ Reboot the machine when the ESC key is pressed (taken from memtest86_3.5-2).
  void resetgame()
  {
    gameover=false;
-@@ -120,6 +128,9 @@
+@@ -120,6 +128,11 @@
        break;
      case 'x':
        return;
 +    case '@':
-+      reboot();
++      if (pressed) {
++        reboot();
++      }
 +      break;
      };
    };

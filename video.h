@@ -8,7 +8,7 @@ void video_usecolor(uint8 fg, uint8 bg);
 void video_putchar(int32 x, int32 y, uint8 code);
 void video_fill(int32 x, int32 y, int32 width, int32 height, uint8 code);
 void video_puthex8(int32 x, int32 y, uint8 hex);
-void video_putstring(int32 x, int32 y, uint8 *str);
+void video_putstring(int32 x, int32 y, char *str);
 
 // immediate effect
 void video_update();
