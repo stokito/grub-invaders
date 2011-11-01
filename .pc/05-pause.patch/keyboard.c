@@ -42,7 +42,6 @@ void key_decode(uint8 *key, bool *pressed)
     if (c==1) *key='@';
     if (c==0x1c) *key='e';
     if (c==0x39) *key=' ';
-    if (c==0x19) *key='p';
   };
 };
 

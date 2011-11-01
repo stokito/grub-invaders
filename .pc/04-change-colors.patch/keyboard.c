@@ -31,8 +31,6 @@ void key_decode(uint8 *key, bool *pressed)
     if (c==0x4b) *key='<';
     if (c==0x48) *key='^';
     if (c==0x50) *key='v';
-    if (c==0x49) *key='u';
-    if (c==0x51) *key='d';
   }else{
     *pressed = ((c&0x80) == 0) ? true : false;
     c &= ~0x80;
@@ -42,7 +40,6 @@ void key_decode(uint8 *key, bool *pressed)
     if (c==1) *key='@';
     if (c==0x1c) *key='e';
     if (c==0x39) *key=' ';
-    if (c==0x19) *key='p';
   };
 };
 
