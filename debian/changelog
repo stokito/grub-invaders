@@ -1,3 +1,22 @@
+invaders (1.0.0-12) unstable; urgency=low
+
+  [ Fabian Greffrath ]
+  * Split 01-pointer-targets-differ-in-signedness.patch into two separate
+    patches: 01-misspelling-loose.patch and 01-uint8-char.patch.
+  * Rename 02-gcc-ldflags.patch to 02-build-flags.patch, clean up CFLAGS
+    and LDFLAGS a bit (we don't need -m32 twice) and replace -Werror with -W.
+  * 02-static-inline.patch: Replace "extern inline" with "static inline" in
+    io.h to allow for non-optimized builds.
+  * 04-change-colors.patch: Use PgUp and PgDown to toggle through the color
+    palette and use a secret key to toggle "psychedelic mode". ;)
+  * 05-pause.patch: Use "P" to pause and resume.
+  * Add DEP-3 compliant headers to all patches.
+  * Make debian/copyright DEP-5 compliant and update Debian packaging license.
+  * Update Standards-Version to 3.9.2.
+  * Set Architecture to "any-i386 any-amd64" instead of a hard-coded list.
+
+ -- Stefan Potyra <sistpoty@ubuntu.com>  Tue, 01 Nov 2011 14:12:46 +0100
+
 invaders (1.0.0-11) unstable; urgency=low
 
   [ Fabian Greffrath ]

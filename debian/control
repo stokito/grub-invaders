@@ -6,13 +6,13 @@ Uploaders: Fabian Greffrath <fabian+debian@greffrath.com>,
            Stefan Potyra <sistpoty@ubuntu.com>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.8.3
+Standards-Version: 3.9.2
 Homepage: http://www.erikyyy.de/invaders/
 Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/invaders/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/invaders/
 
 Package: grub-invaders
-Architecture: i386 hurd-i386 kfreebsd-i386 amd64 kfreebsd-amd64
+Architecture: any-i386 any-amd64
 Depends: ${misc:Depends}
 Description: multiboot compliant kernel game
  GRUB Invaders is a game that runs directly on a computer, without an operating

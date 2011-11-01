@@ -1,26 +1,11 @@
-Author: Erik Thiele <erikyyy@erikyyy.de>
-Download: http://www.erikyyy.de/invaders/
+Format: http://dep.debian.net/deps/dep5 
+Upstream-Name: Invaders
+Upstream-Contact: Erik Thiele <erikyyy@erikyyy.de>
+Source: http://www.erikyyy.de/invaders/
 
 Files: *
 Copyright: © 2001, Erik Thiele
-           © 1999, Free Software Foundation, Inc.
 License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- .
- On Debian systems, the complete text of the GNU General
- Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
 Files: io.h
 Copyright: © 1991-2009, Linus Torvalds and many others
@@ -41,9 +26,28 @@ License: GPL-2
  On Debian systems, the complete text of the GNU General
  Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
+Files: multiboot.h
+Copyright: © 1999, Free Software Foundation, Inc.
+License: GPL-2+
+
 Files: debian/*
-Copyright: © 2007-2009, Fabian Greffrath <fabian@debian-unofficial.org>
-License: GAP
- Copying and distribution of the Debian packaging, with or without modification,
- are permitted in any medium without royalty provided the copyright
- notice and this notice are preserved.
+Copyright: © 2007-2011, Fabian Greffrath <fabian+debian@greffrath.com>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.

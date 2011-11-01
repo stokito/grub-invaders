@@ -42,21 +42,6 @@ void changecolors(int c)
         else if (aliencolor<1) aliencolor=15;
 }
 
-void displaypause()
-{
-  uint8 key;
-  bool pressed;
-
-  video_usecolor(6,1);
-  video_putstring(30,10,"    PAUSE    ");
-  video_putstring(30,11,"  PRESS \'P\'  ");
-  video_update();
-  do{
-    key_decode(&key,&pressed);
-    key_polling();
-  } while (!(pressed&&(key=='p')));
-};
-
 void resetgame()
 {
   gameover=false;
@@ -180,11 +165,6 @@ void keywork()
           psychedelic=false;
           shotcolor=4,shipcolor=5,aliencolor=3;
         }
-      }
-      break;
-    case 'p':
-      if (pressed) {
-        displaypause();
       }
       break;
     };
