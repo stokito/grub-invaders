@@ -4,12 +4,11 @@ Priority: optional
 Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
 Uploaders: Fabian Greffrath <fabian+debian@greffrath.com>,
            Stefan Potyra <sistpoty@ubuntu.com>
-DM-Upload-Allowed: yes
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
 Homepage: http://www.erikyyy.de/invaders/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-games/packages/trunk/invaders/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-games/packages/trunk/invaders/
+Vcs-Svn: svn://anonscm.debian.org/pkg-games/packages/trunk/invaders/
+Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-games/packages/trunk/invaders/
 
 Package: grub-invaders
 Architecture: any-i386 any-amd64

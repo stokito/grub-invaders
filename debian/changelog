@@ -1,3 +1,20 @@
+invaders (1.0.0-13) unstable; urgency=low
+
+  [ Evgeni Golov ]
+  * Correct Vcs-* URLs to point to anonscm.debian.org
+
+  [ Fabian Greffrath ]
+  * Fix ftbfs with GCC-5 (Closes: #777915).
+    + 02-static-inline.patch: Declare ins##s() and outs##s() as
+      "static inline" as well.
+    + 03-reboot-on-esc.patch: Declare reboot() as "static inline",
+      since it calls outb() which is static inline itself.
+  * Fix unversioned debian/copyright format URI.
+  * Bump Standards-Version and remove obsolete DM-Upload-Allowed field.
+  * Bump debhelper compat level to 9.
+
+ -- Fabian Greffrath <fabian+debian@greffrath.com>  Mon, 27 Apr 2015 10:22:14 +0200
+
 invaders (1.0.0-12) unstable; urgency=low
 
   [ Fabian Greffrath ]

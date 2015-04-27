@@ -70,12 +70,12 @@ __IN1(s) __IN2(s,s1,"w") : "=a" (_v) : "Nd" (port) ,##i ); return _v; } \
 __IN1(s##_p) __IN2(s,s1,"w") __FULL_SLOW_DOWN_IO : "=a" (_v) : "Nd" (port) ,##i ); return _v; } \
 
 #define __INS(s) \
-extern inline void ins##s(unsigned short port, void * addr, unsigned long count) \
+static inline void ins##s(unsigned short port, void * addr, unsigned long count) \
 { __asm__ __volatile__ ("rep ; ins" #s \
 : "=D" (addr), "=c" (count) : "d" (port),"0" (addr),"1" (count)); }
 
 #define __OUTS(s) \
-extern inline void outs##s(unsigned short port, const void * addr, unsigned long count) \
+static inline void outs##s(unsigned short port, const void * addr, unsigned long count) \
 { __asm__ __volatile__ ("rep ; outs" #s \
 : "=S" (addr), "=c" (count) : "d" (port),"0" (addr),"1" (count)); }
 
