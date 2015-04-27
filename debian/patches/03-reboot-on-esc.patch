@@ -16,7 +16,7 @@ Description: Reboot the machine when the ESC key is pressed,
  
  static bool gameover, winner;
  
-+inline void reboot()
++static inline void reboot()
 +{
 +  /* tell the BIOS to do a warm start */
 +  *((unsigned short *)0x472) = 0x1234;

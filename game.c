@@ -22,7 +22,7 @@ static struct alien_t aliens[NUMALIENS];
 
 static bool gameover, winner;
 
-inline void reboot()
+static inline void reboot()
 {
   /* tell the BIOS to do a warm start */
   *((unsigned short *)0x472) = 0x1234;
