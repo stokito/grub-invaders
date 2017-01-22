@@ -19,6 +19,7 @@ struct alien_t {
 };
 #define NUMALIENS 40
 static struct alien_t aliens[NUMALIENS];
+static uint8 livealiens = NUMALIENS;
 
 static bool gameover, winner;
 
@@ -66,6 +67,7 @@ void resetgame()
     for (i=0;i<NUMSHOTS;++i) shots[i].x=-1;
   };
   ship=40;
+  livealiens = NUMALIENS;
   shipmove=0;
   {
     uint8 x,y;
@@ -218,6 +220,7 @@ void calculate()
 		 (shots[k].x>=aliens[i].x-1) ) {
 	      shots[k].x=-1;
 	      aliens[i].x=-1;
+          livealiens--;
 	      goto nextalien;
 	    };
 	  };
@@ -252,7 +255,7 @@ void sounder()
       }else{
 	sound_nosound();
       };
-      delay_wait(1193180/80);
+      delay_wait(1193180/1000+livealiens*500);
     };
   };
   sound_nosound();

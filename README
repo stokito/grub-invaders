@@ -2,9 +2,10 @@ hi. this is invaders, a multi boot compliant game for i386.
 boot it with grub (http://www.gnu.org/software/grub/)
 like this:
 
-root (YOUR ROOT DEVICE)
-kernel (YOUR PATH)/invaders
-boot
+menuentry "Grub Invaders" {
+   multiboot /boot/invaders
+   boot
+}
 
 run the compile.sh script to compile the game, or just use the
 precompiled image. (do not try to boot "invaders.exec", that's the
