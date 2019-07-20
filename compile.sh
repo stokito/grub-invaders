@@ -2,8 +2,8 @@
 
 set -e
 set -v
-
-CFLAGS="-ffreestanding -m32 -nostdinc -nostdlib -I. -O2 -W -Wall"
+#Compiling fix by Thomas Lane/allbombson
+CFLAGS="-ffreestanding -m32 -nostdinc -nostdlib -I. -O2 -W -Wall -fno-stack-protector"
 LDFLAGS="-Wl,-N -Wl,-Ttext -Wl,100000 -Wl,--build-id=none"
 gcc $CFLAGS -c keyboard.c
 gcc $CFLAGS -c delay.c
